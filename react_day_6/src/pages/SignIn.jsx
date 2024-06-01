@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; //Hook built in fuction we can use
 import './SignIn.css'; 
 
 const SignIn = () => {
@@ -9,7 +9,7 @@ const SignIn = () => {
 
   useEffect(() => {
     getLocalStorage();
-  }, []);
+  }, []); //EMPTY Dependecy array
 
   const getLocalStorage = () => {
     let userNameFromLocalStorage = localStorage.getItem('userName');
@@ -30,7 +30,7 @@ const SignIn = () => {
     localStorage.setItem('userName', userName);
     localStorage.setItem('isSignedIn', true);
     setIsSignedIn(true);
-    navigate('/home')
+    navigate('/home') // this "/" has to do with url
   };
   
   return (
